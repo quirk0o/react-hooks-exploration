@@ -7,6 +7,8 @@ import { Clock } from "./components/clock";
 import { Slider } from "./components/slider";
 import { Portal } from "./components/portal";
 import { useToggle } from "./hooks/toggle";
+import { ThemeProvider } from "./hooks/styled";
+import { Button } from "./components/button";
 
 function App() {
   const [open, toggleOpen] = useToggle();
@@ -18,6 +20,9 @@ function App() {
 
   return (
     <>
+      <ThemeProvider theme={{}}>
+        <Button>Click Me</Button>
+      </ThemeProvider>
       <Clock />
       <Slider />
       <Portal ref={portalRef}>
